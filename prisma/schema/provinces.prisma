@@ -1,0 +1,17 @@
+model Province {
+    id        Int      @id
+    name      String
+
+    provinceCode  ProvinceCode[]
+    @@map("provinces")
+}
+
+model ProvinceCode {
+    id         Int      @id @default(autoincrement())
+    provinceId Int      @map("province_id")
+    code       Int
+
+    province  Province @relation(fields: [provinceId], references: [id])
+    
+    @@map("province_codes")
+}

@@ -1,0 +1,33 @@
+services:
+  # api:
+  #   build:
+  #     context: ./
+  #   container_name: api_plate_lookup
+  #   command: sh -c "npm install && npm run start:dev"
+  #   depends_on:
+  #     - posgres_db
+  #   ports:
+  #     - '8001:8001'
+  #   volumes:
+  #     - ./:/usr/src/app
+  #   networks:
+  #     - app-network
+
+  db:
+    image: postgres
+    container_name: db_plate_lookup
+    ports:
+      - '5436:5432'
+    environment:
+      - POSTGRES_USER=plate_lookup_user
+      - POSTGRES_PASSWORD=plate_lookup_password
+      - POSTGRES_MULTIPLE_DATABASES=plate_lookup_db
+    volumes:
+      - ./datadb/postgresql:/var/lib/postgresql/data
+      - ./conf/scripts/init-db.sh:/docker-entrypoint-initdb.d/init-db.sh
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge

@@ -1,0 +1,279 @@
+:root {
+  --card-height: 300px;
+  --card-width: calc(var(--card-height) / 1.2);
+}
+* {
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+p {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  width: 100vw;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* form search css start */
+.s129 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+}
+
+.s129 .form {
+  position: relative;
+  width: 100%;
+  max-width: 390px;
+}
+
+.s129 .form .inner-form {
+  width: 100%;
+}
+
+.s129 .form .inner-form .input-field {
+  height: 80px;
+  width: 100%;
+  position: relative;
+}
+
+.s129 .form .inner-form .input-field input {
+  height: 100%;
+  width: 100%;
+  background: transparent;
+  border: 0;
+  border-bottom: 2px solid #e2f6fb;
+  display: block;
+  width: 100%;
+  padding: 10px 32px 10px 70px;
+  font-size: 18px;
+  color: #007f8d;
+  transition:
+    all 0.2s ease-out,
+    color 0.2s ease-out;
+}
+
+.s129 .form .inner-form .input-field input.placeholder {
+  color: #007f8d;
+  font-size: 18px;
+}
+
+.s129 .form .inner-form .input-field input:-moz-placeholder {
+  color: #007f8d;
+  font-size: 18px;
+}
+
+.s129 .form .inner-form .input-field input::-webkit-input-placeholder {
+  color: #007f8d;
+  font-size: 18px;
+}
+
+.s129 .form .inner-form .input-field input:hover,
+.s129 .form .inner-form .input-field input:focus {
+  box-shadow: none;
+  outline: 0;
+  border-bottom-color: #007f8d;
+}
+
+.s129 .form .inner-form .input-field #btn-search {
+  width: 70px;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  left: 0;
+  height: 100%;
+  background: transparent;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+.s129 .form .inner-form .input-field #btn-search svg {
+  fill: #007f8d;
+  width: 50px;
+  height: 50px;
+}
+
+.s129 .form .inner-form .input-field #btn-search:hover,
+.s129 .form .inner-form .input-field #btn-search:focus {
+  outline: 0;
+  box-shadow: none;
+}
+
+@media screen and (max-width: 767px) {
+  .s129 .form .inner-form .input-field {
+    margin-bottom: 20px;
+    height: 50px;
+  }
+  .s129 .form .inner-form .input-field input {
+    padding-left: 45px;
+    font-size: 16px;
+  }
+  .s129 .form .inner-form .input-field #btn-search svg {
+    width: 36px;
+    height: 36px;
+  }
+}
+/* form search css end */
+.avatar {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  vertical-align: middle;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+}
+.title-list {
+  margin-left: 20px;
+}
+
+.province-card {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-left: 20px;
+}
+
+.card {
+  width: calc(10% - 20px);
+  height: 90px;
+  border: 1px solid #8fe3ea;
+  border-radius: 4px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  color: #007f8d;
+  transition: all 0.3s ease;
+}
+
+.active {
+  animation:
+    flash 0.5s infinite,
+    fireworks 1.5s infinite;
+}
+
+#error {
+  position: absolute;
+  left: 0;
+  bottom: -25px;
+  min-height: 0.38em;
+  font-size: 14px;
+  color: #bb1a1a;
+}
+
+@keyframes flash {
+  0% {
+    background-color: #fff;
+  }
+  50% {
+    background-color: #fceabb;
+  }
+  100% {
+    background-color: #fff;
+  }
+}
+
+@keyframes fireworks {
+  0% {
+    box-shadow:
+      0 0 5px rgba(255, 0, 0, 0.5),
+      0 0 15px rgba(255, 0, 0, 0.3);
+  }
+  25% {
+    box-shadow:
+      0 0 15px rgba(255, 255, 0, 0.6),
+      0 0 25px rgba(255, 255, 0, 0.4);
+  }
+  50% {
+    box-shadow:
+      0 0 25px rgba(0, 255, 0, 0.6),
+      0 0 35px rgba(0, 255, 0, 0.4);
+  }
+  75% {
+    box-shadow:
+      0 0 35px rgba(0, 0, 255, 0.6),
+      0 0 45px rgba(0, 0, 255, 0.4);
+  }
+  100% {
+    box-shadow:
+      0 0 5px rgba(255, 0, 0, 0.5),
+      0 0 15px rgba(255, 0, 0, 0.3);
+  }
+}
+
+.card-header {
+  text-align: center;
+  font-size: 16px;
+  font-weight: 600;
+  border-bottom: 1px solid #8fe3ea;
+  background-color: #e2f6fb;
+  padding: 5px 10px;
+}
+
+.card-main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 7px 7px;
+  flex: 1;
+}
+
+.main-description {
+  text-align: center;
+}
+
+@media screen and (max-width: 1669px) {
+  .card {
+    width: calc(11% - 20px);
+  }
+}
+
+@media screen and (max-width: 1602px) {
+  .card {
+    width: calc(14% - 20px);
+  }
+}
+
+@media screen and (max-width: 1275px) {
+  .card {
+    width: calc(20% - 20px);
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .card {
+    width: calc(25% - 20px);
+  }
+}
+
+/* Styles cho tablet */
+@media screen and (max-width: 768px) {
+  .province-card {
+    gap: 10px;
+  }
+  .card {
+    width: calc(33% - 20px);
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .province-card {
+    gap: 7px;
+  }
+  .card {
+    width: calc(50% - 20px);
+  }
+}
